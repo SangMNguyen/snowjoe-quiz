@@ -16,7 +16,7 @@
           :key="index"
           @change="updateAnswer"
         />
-        <button v-on:click="gradeQuiz">Submit</button>
+        <button v-on:click="gradeQuiz">{{ isGraded ? "Re-Submit" : "Submit" }}</button>
         <div v-show="isMissing" id="missingSection">
           Please answer all questions before submitting. Unanswered question are displayed in yellow.
         </div>
@@ -149,7 +149,7 @@ body {
 }
 
 button {
-  width: 5rem;
+  width: 6rem;
   background-color: #22B667;
   color: white;
   border: none;
