@@ -70,6 +70,11 @@ export default {
       this.score = grade;
       this.isGraded = !missingAnswer;
       this.isMissing = missingAnswer;
+      if(missingAnswer) {
+        setTimeout(function() {window.scrollTo(0, document.body.scrollHeight)}, 1);
+      } else {
+        window.scrollTo(0, 0);
+      }
     }
   },
   components: {
@@ -79,6 +84,9 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0;
   margin: 0;
@@ -130,7 +138,8 @@ body {
 }
 
 #missingSection {
-  margin-bottom: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
   color: red;
 }
 
