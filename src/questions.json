@@ -69,6 +69,16 @@
                 "HTML styles the page, CSS makes it interactive"
             ],
             "answer": 1
+        },
+        {
+            "question": "What is the treatment for a casualty having an anaphylactic reaction?",
+            "options": [
+                "Help use Epinephrine/Adrenaline auto-injector and active EMS",
+                "Put a band-aid on them",
+                "Call your non-medical professional child",
+                "Walk away and never look back"
+            ],
+            "answer": 0
         }
-      ]
+    ]
 }
