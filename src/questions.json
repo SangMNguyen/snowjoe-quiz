@@ -3,10 +3,10 @@
         {
           "question": "Which of these statements is false?",
           "options": [
-            "The sky is red.",
+            "Oranges are colors but not fruits.",
             "Orcas are apex predators.",
             "Oreos are great with milk.",
-            "Dogs actually love you."
+            "Ottawa is the capital of Canada"
           ],
           "answer": 0
         },
@@ -59,6 +59,16 @@
             "Vodka"
           ],
           "answer": 0
+        },
+        {
+            "question": "What is the purpose of HTML and CSS?",
+            "options": [
+                "HTML handles data, CSS handles routing",
+                "HTML tells the browser what to display, CSS tells it what style to display it in",
+                "HTML runs the database, and CSS is the query language",
+                "HTML styles the page, CSS makes it interactive"
+            ],
+            "answer": 1
         }
       ]
 }
