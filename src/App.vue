@@ -18,7 +18,7 @@
         />
         <button v-on:click="gradeQuiz">{{ isGraded ? "Re-Submit" : "Submit" }}</button>
         <div v-show="isMissing" id="missingSection">
-          Please answer all questions before submitting. Unanswered question are displayed in yellow.
+          Please answer all questions before submitting. Unanswered questions are displayed in yellow.
         </div>
       </div>
   </div>
