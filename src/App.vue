@@ -3,21 +3,23 @@
       <div id="banner">
         <h1>Snow Joe Quiz Application</h1>
       </div>
-      <h1>Quiz 1 - Life Questions</h1>
-      <div v-show="isGraded" id="scoreSection">
-        <h2>Result</h2>
-        You got {{ score }} / {{ currentQuestions.length }} questions correct
-        <div id="percent">{{ Math.round(score/currentQuestions.length*100) }}%</div>
-      </div>
-      <Question
-        v-for="(item,index) in currentQuestions"
-        :questionData="item"
-        :key="index"
-        @change="updateAnswer"
-      />
-      <button v-on:click="gradeQuiz">Submit</button>
-      <div v-show="isMissing" id="missingSection">
-        Please answer all questions before submitting. Unanswered question are displayed in yellow.
+      <div id="content">
+        <h1>Quiz 1 - Life Questions</h1>
+        <div v-show="isGraded" id="scoreSection">
+          <h2>Result</h2>
+          You got {{ score }} / {{ currentQuestions.length }} questions correct
+          <div id="percent">{{ Math.round(score/currentQuestions.length*100) }}%</div>
+        </div>
+        <Question
+          v-for="(item,index) in currentQuestions"
+          :questionData="item"
+          :key="index"
+          @change="updateAnswer"
+        />
+        <button v-on:click="gradeQuiz">Submit</button>
+        <div v-show="isMissing" id="missingSection">
+          Please answer all questions before submitting. Unanswered question are displayed in yellow.
+        </div>
       </div>
   </div>
 </template>
@@ -71,9 +73,9 @@ export default {
       this.isGraded = !missingAnswer;
       this.isMissing = missingAnswer;
       if(missingAnswer) {
-        setTimeout(function() {window.scrollTo(0, document.body.scrollHeight)}, 1);
+        setTimeout(function() {document.getElementById("content").scrollTo(0, document.getElementById("content").scrollHeight)}, 1);
       } else {
-        window.scrollTo(0, 0);
+        document.getElementById("content").scrollTo(0, 0);
       }
     }
   },
@@ -84,8 +86,10 @@ export default {
 </script>
 
 <style>
+
+/* App Wide Styles */
 html {
-  scroll-behavior: smooth;
+  overflow: hidden;
 }
 body {
   padding: 0;
@@ -100,7 +104,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 4rem 0 0 0;
+  margin: 3.75rem 0 0 0;
   padding: 0;
 }
 
@@ -121,6 +125,13 @@ body {
   font-size: 1.5rem;
 }
 
+#content {
+  height: calc(100vh - 4rem);
+  width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 #scoreSection {
   color: #555555;
 }
@@ -137,15 +148,9 @@ body {
   color: red;
 }
 
-#missingSection {
-  margin-top: -1rem;
-  margin-bottom: 3rem;
-  color: red;
-}
-
 button {
   margin: 0 auto 2rem auto;
-  background-color: green;
+  background-color: #22B667;
   color: white;
   border: none;
   border-radius: 5px;
@@ -155,7 +160,13 @@ button {
 }
 
 button:hover {
-  background-color: lightgreen;
+  background-color: #2CD67B;
   transition: 0.3s ease;
+}
+
+#missingSection {
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+  color: red;
 }
 </style>

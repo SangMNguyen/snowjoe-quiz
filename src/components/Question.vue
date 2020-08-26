@@ -58,7 +58,7 @@ export default {
     width: calc(100% - 20rem);
     min-width: 20rem;
     border-radius: 20px;
-    border: none;
+    border: 0.1rem solid transparent;
     align-items: flex-start;
     box-shadow: 3px 3px 15px 3px #ccc;
 }
@@ -84,6 +84,7 @@ section {
     padding: 0.5rem;
     border-radius: 5px;
     width: 100%;
+    text-align: left;
 }
 
 input {
@@ -99,16 +100,16 @@ input {
 
 /* When user clicks submit but forgets to answer at least 1 question */
 #question.important {
-    border: 0.1rem solid yellow;
+    border-color: yellow;
 }
 
 /* When the exam has been successfully graded */
 #app.graded #question.correct {
-    border: 0.1rem solid green;
+    border-color: green;
 }
 
 #app.graded #question.wrong {
-    border: 0.1rem solid red;
+    border-color: red;
 }
 
 #app.graded .status.bad {
