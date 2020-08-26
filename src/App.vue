@@ -99,11 +99,11 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  color: #2c3e50;
   margin: 3.75rem 0 0 0;
   padding: 0;
 }
@@ -112,17 +112,17 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem 0;
   text-align: left;
   background-color: darkred;
   color: white;
   margin-bottom: 1rem;
+  padding: 1rem 0;
   z-index: 1000;
 }
 
 #banner h1 {
-  margin: 0 0 0 1rem;
   font-size: 1.5rem;
+  margin: 0 0 0 1rem;
 }
 
 #content {
@@ -143,19 +143,19 @@ body {
 }
 
 #percent {
-  margin: 1rem 0;
   font-weight: 800;
   color: red;
+  margin: 1rem 0;
 }
 
 button {
-  margin: 0 auto 2rem auto;
+  width: 5rem;
   background-color: #22B667;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 0.75rem;
-  width: 5rem;
+  margin: 0 auto 2rem auto;
   transition: 0.3s ease;
 }
 
@@ -165,8 +165,8 @@ button:hover {
 }
 
 #missingSection {
+  color: red;
   margin-top: -1rem;
   margin-bottom: 3rem;
-  color: red;
 }
 </style>

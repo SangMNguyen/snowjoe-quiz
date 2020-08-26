@@ -52,14 +52,14 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    margin: 0 auto 2rem auto;
+    align-items: flex-start;
     max-width: 75rem;
     width: calc(100% - 20rem);
     min-width: 20rem;
     border-radius: 20px;
     border: 0.1rem solid transparent;
-    align-items: flex-start;
+    padding: 2rem;
+    margin: 0 auto 2rem auto;
     box-shadow: 3px 3px 15px 3px #ccc;
 }
 
@@ -69,22 +69,22 @@ export default {
 }
 
 section {
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 70%;
+    padding: 0;
+    margin: 0;
 }
 
 .option {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.5rem;
-    border-radius: 5px;
     width: 100%;
     text-align: left;
+    border-radius: 5px;
+    padding: 0.5rem;
 }
 
 input {
