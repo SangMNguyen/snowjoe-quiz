@@ -92,17 +92,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0;
+  margin: 4rem 0 0 0;
   padding: 0;
 }
 
 #banner {
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 1rem 0;
   text-align: left;
   background-color: darkred;
   color: white;
   margin-bottom: 1rem;
+  z-index: 1000;
 }
 
 #banner h1 {
@@ -132,7 +135,7 @@ body {
 }
 
 button {
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 2rem auto;
   background-color: green;
   color: white;
   border: none;

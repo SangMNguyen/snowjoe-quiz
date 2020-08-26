@@ -81,7 +81,8 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
     width: 100%;
 }
 
@@ -121,8 +122,9 @@ input {
 }
 
 #app.graded #question.wrong .rightAnswer {
-    background-color: lightgreen;
-    border: 0.1rem solid green;
+    color: white;
+    background-color: #11AB07;
+    border: 0.1rem solid #0A5905;
 
 }
 </style>
