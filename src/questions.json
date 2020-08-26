@@ -1,0 +1,64 @@
+{
+    "questions": [
+        {
+          "question": "Which of these statements is false?",
+          "options": [
+            "The sky is red.",
+            "Orcas are apex predators.",
+            "Oreos are great with milk.",
+            "Dogs actually love you."
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How many dogs exist in the world?",
+          "options": [
+            "-5",
+            "0",
+            "Dogs don't exist???",
+            "At least 3."
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Solve for x. 2(x + 2)(x + 6) = 32",
+          "options": [
+            "x = -5",
+            "q = 1.4",
+            "x = 2",
+            "x = square"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What song has Taylor Swift released?",
+          "options": [
+            "Take Me to Church",
+            "Yellow Submarine",
+            "Teardrops on my Guitar",
+            "Maroon 5"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the capital of Maine?",
+          "options": [
+            "Portland",
+            "Augusta",
+            "Newark",
+            "Chicago"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What vitamin can you take to make falling asleep easier?",
+          "options": [
+            "Melatonin",
+            "Melanin",
+            "Gelatin",
+            "Vodka"
+          ],
+          "answer": 0
+        }
+      ]
+}

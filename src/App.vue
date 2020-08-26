@@ -1,28 +1,149 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" :class="{ graded: isGraded }">
+      <div id="banner">
+        <h1>Snow Joe Quiz Application</h1>
+      </div>
+      <h1>Quiz 1 - Life Questions</h1>
+      <div v-show="isGraded" id="scoreSection">
+        <h2>Result</h2>
+        You got {{ score }} / {{ currentQuestions.length }} questions correct
+        <div id="percent">{{ Math.round(score/currentQuestions.length*100) }}%</div>
+      </div>
+      <Question
+        v-for="(item,index) in currentQuestions"
+        :questionData="item"
+        :key="index"
+        @change="updateAnswer"
+      />
+      <button v-on:click="gradeQuiz">Submit</button>
+      <div v-show="isMissing" id="missingSection">
+        Please answer all questions before submitting. Unanswered question are displayed in yellow.
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Question from './components/Question.vue';
+const quizData = require("./questions.json");
 
 export default {
   name: 'App',
+  data: function() {
+    return {
+      score: 0,
+      isGraded: false,
+      isMissing: false,
+      currentQuestions: quizData.questions.map((item,index) => {
+        return {
+          question: item.question,
+          options: item.options,
+          qNum: `${index + 1}`,
+          userAnswer: -1,
+          actualAnswer: item.answer,
+          needsAnswer: false,
+          isCorrect: false,
+        };
+      })
+    }
+  },
+  methods: {
+    updateAnswer(value) {
+      this.userAnswer = value;
+    },
+    gradeQuiz: function() {
+      let grade = 0;
+      let missingAnswer = false;
+
+      this.currentQuestions.forEach(item => {
+        
+        item.needsAnswer = (item.userAnswer === -1);
+        if(item.needsAnswer) {
+          missingAnswer = true;
+        }
+        
+        if(item.userAnswer === item.actualAnswer) {
+          item.isCorrect = true;
+          grade++;
+        }
+      });
+
+      this.score = grade;
+      this.isGraded = !missingAnswer;
+      this.isMissing = missingAnswer;
+    }
+  },
   components: {
-    HelloWorld
+    Question
   }
 }
 </script>
 
 <style>
+body {
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: left;
+  background-color: darkred;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+#banner h1 {
+  margin: 0 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+#scoreSection {
+  color: #555555;
+}
+
+#scoreSection h2 {
+  text-decoration: underline;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+#percent {
+  margin: 1rem 0;
+  font-weight: 800;
+  color: red;
+}
+
+#missingSection {
+  margin-bottom: 1rem;
+  color: red;
+}
+
+button {
+  margin: 0 auto 1rem auto;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem;
+  width: 5rem;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: lightgreen;
+  transition: 0.3s ease;
 }
 </style>
